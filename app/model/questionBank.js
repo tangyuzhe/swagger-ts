@@ -24,18 +24,22 @@ module.exports = app => {
     optionA: {
       type: DataTypes.STRING(200),
       allowNull: true,
+      field: 'optionA',
     },
     optionB: {
       type: DataTypes.STRING(200),
       allowNull: true,
+      field: 'optionB',
     },
     optionC: {
       type: DataTypes.STRING(200),
       allowNull: true,
+      field: 'optionC',
     },
     optionD: {
       type: DataTypes.STRING(200),
       allowNull: true,
+      field: 'optionD',
     },
     answer: {
       type: DataTypes.STRING(10),

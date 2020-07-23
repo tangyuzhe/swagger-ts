@@ -53,7 +53,7 @@ class QuestionBankService extends Service {
         });
       }
     } catch (error) {
-      ctx.status = 1000;
+      // ctx.status = 1000;
       throw (error);
     }
   }
