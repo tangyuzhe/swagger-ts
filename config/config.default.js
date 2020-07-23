@@ -1,7 +1,7 @@
 /* eslint valid-jsdoc: "off" */
 
 'use strict';
-const Op = require('sequelize').Op;
+// const Op = require('sequelize').Op;
 /**
  * @param {Egg.EggAppInfo} appInfo app info
  */
@@ -40,6 +40,9 @@ module.exports = appInfo => {
       timestamps: false,
     },
     operatorsAliases: false,
+    // operatorsAliases: {
+    //   $between: Op.between,
+    // },
   };
 
   config.swaggerdoc = {

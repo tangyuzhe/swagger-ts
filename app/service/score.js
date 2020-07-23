@@ -1,6 +1,8 @@
 'use strict';
 const Service = require('egg').Service;
 const Code = require('../util/code');
+const Sequelize = require('sequelize');
+const Op = Sequelize.Op;
 class ScoreService extends Service {
   /**
    * 创建成绩单
@@ -32,7 +34,7 @@ class ScoreService extends Service {
       where: {
         name: Name,
         time: {
-          $between: [startTime, endTime],
+          [Op.between]: [startTime, endTime],
         },
       },
     });
