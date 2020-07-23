@@ -39,9 +39,7 @@ module.exports = appInfo => {
     define: {
       timestamps: false,
     },
-    operatorsAliases: {
-      $between: Op.between,
-    },
+    operatorsAliases: false,
   };
 
   config.swaggerdoc = {
