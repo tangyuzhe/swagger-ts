@@ -36,13 +36,6 @@ module.exports = appInfo => {
     username: 'root',
     password: 'Fznfzn509.',
     timezone: '+08:00',
-    define: {
-      timestamps: false,
-    },
-    operatorsAliases: false,
-    // operatorsAliases: {
-    //   $between: Op.between,
-    // },
   };
 
   config.swaggerdoc = {
