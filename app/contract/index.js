@@ -64,6 +64,11 @@ module.exports = {
       description: '地址',
       required: true,
     },
+    jurisdiction: {
+      type: 'string',
+      description: '所属辖区',
+      required: true,
+    },
     score: {
       type: 'number',
       description: '成绩',

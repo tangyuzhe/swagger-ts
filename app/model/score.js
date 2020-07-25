@@ -18,6 +18,10 @@ module.exports = app => {
       type: DataTypes.STRING(50),
       allowNull: true,
     },
+    jurisdiction: {
+      type: DataTypes.STRING(10),
+      allowNull: true,
+    },
     score: {
       type: DataTypes.INTEGER,
       allowNull: true,
