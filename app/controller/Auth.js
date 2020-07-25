@@ -14,8 +14,8 @@ class UserInfoController extends Controller {
   */
   async getWXAuth() {
     const { ctx, service } = this;
-    ctx.body = await service.user.getWXAuth(ctx.query.code)
-    ctx.redirect('http://localhost:8080/#/pages/index/index?' + qs.stringify(ctx.body));
+    ctx.body = await service.user.getWXAuth(ctx.query.code);
+    ctx.redirect('http://thesecondclass.linaxhua.cn:8081/#/pages/index/index?' + qs.stringify(ctx.body));
   }
 
   /**
