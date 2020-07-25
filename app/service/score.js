@@ -23,16 +23,16 @@ class ScoreService extends Service {
 
   /**
    * 查询指定日期的分数
-   * @param Name
+   * @param Openid
    * @param startTime
    * @param endTime
    */
-  async queryScore(Name, startTime, endTime) {
+  async queryScore(Openid, startTime, endTime) {
     const { ctx } = this;
     const res = await ctx.model.Score.findAll({
       attributes: ['score'],
       where: {
-        name: Name,
+        openid: Openid,
         time: {
           [Op.between]: [startTime, endTime],
         },
@@ -47,7 +47,27 @@ class ScoreService extends Service {
       });
     }
   }
-}
 
+  /**
+   * 查询全部成绩
+   * @param {*} Openid
+   */
+  async list(Openid) {
+    const { ctx } = this;
+    const res = await ctx.model.Score.findAll({
+      where: {
+        openid: Openid,
+      },
+    });
+    if (!res) {
+      return Object.assign({}, Code.Find.ERROE);
+    }
+    if (res) {
+      return Object.assign({}, Code.Find.SUCCESS, {
+        data: res,
+      });
+    }
+  }
+}
 
 module.exports = ScoreService;

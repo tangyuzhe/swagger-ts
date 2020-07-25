@@ -22,14 +22,26 @@ class ScoreController extends Controller {
    * @summary 查询
    * @description 查询测试成绩
    * @router get /api/score
-   * @request query string name
+   * @request query string openid
    * @request query string starttime
    * @request query string endtime
    * @response 200 Score 查询成功
    */
   async QueryScore() {
     const { ctx, service } = this;
-    ctx.body = await service.score.queryScore(ctx.query.name, ctx.query.starttime, ctx.query.endtime);
+    ctx.body = await service.score.queryScore(ctx.query.openid, ctx.query.starttime, ctx.query.endtime);
+  }
+
+  /**
+   * @summary 查询全部成绩
+   * @description 查询测试成绩
+   * @router get /api/score/all
+   * @request query string openid
+   * @response 200 Score 查询成功
+   */
+  async list() {
+    const { ctx, service } = this;
+    ctx.body = await service.score.list(ctx.query.openid);
   }
 }
 
