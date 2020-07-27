@@ -14,7 +14,7 @@ module.exports = app => {
       type: DataTypes.STRING(10),
       allowNull: true,
     },
-    address: {
+    phone: {
       type: DataTypes.STRING(50),
       allowNull: true,
     },

@@ -59,7 +59,7 @@ module.exports = {
       description: '学生姓名',
       required: true,
     },
-    address: {
+    phone: {
       type: 'string',
       description: '地址',
       required: true,
