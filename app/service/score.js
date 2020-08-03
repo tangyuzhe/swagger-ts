@@ -55,6 +55,7 @@ class ScoreService extends Service {
   async list(Openid) {
     const { ctx } = this;
     const res = await ctx.model.Score.findAll({
+      'order': [['time', 'DESC']],
       where: {
         openid: Openid,
       },
