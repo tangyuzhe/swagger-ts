@@ -43,6 +43,17 @@ class IntegralsController extends Controller {
     const { ctx, service } = this;
     ctx.body = await service.integrals.create(ctx.request.body)
   }
+
+  /**
+    * @summary 积分排序
+    * @description 根据积分从大到小排序
+    * @router get /api/integrals/rank
+    * @response 200 Integrals 查询成功
+   */
+  async list() {
+    const { ctx, service } = this;
+    ctx.body = await service.integrals.list()
+  }
 }
 
 module.exports = IntegralsController;

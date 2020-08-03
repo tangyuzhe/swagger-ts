@@ -52,5 +52,18 @@ class IntegralsService extends Service {
       });
     }
   }
+
+  /**
+   * 根据积分排序
+   */
+  async list() {
+    const { ctx } = this;
+    const res = await ctx.model.Integrals.findAll({
+      'order': [['integrals', 'DESC']]
+    })
+    return Object.assign({}, Code.Find.SUCCESS, {
+      data: res
+    })
+  }
 }
 module.exports = IntegralsService;
