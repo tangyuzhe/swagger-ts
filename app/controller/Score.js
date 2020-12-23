@@ -43,6 +43,18 @@ class ScoreController extends Controller {
     const { ctx, service } = this;
     ctx.body = await service.score.list(ctx.query.openid);
   }
+
+  /**
+   * @summary 查询某班级全部
+   * @description 查询某班级全部
+   * @router get /api/score/class
+   * @request query string jurisdiction
+   * @response 200 Score 查询成功
+   */
+  async findClassGrade(){
+    const { ctx, service } = this;
+    ctx.body = await service.score.list(ctx.query.jurisdiction);
+  }
 }
 
 module.exports = ScoreController;

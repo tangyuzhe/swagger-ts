@@ -68,6 +68,29 @@ class ScoreService extends Service {
       });
     }
   }
+
+  /**
+   * 查询某个班级的学生完成情况
+   * @param {*} jurisdiction 
+   */
+  async findClassGrade(jurisdiction){
+    const { ctx } = this;
+    const res = await ctx.model.Score.findAll({
+      attributes: ['phone','score','time'],
+      where: {
+        jurisdiction: jurisdiction,
+      },
+      'order':"phone DESC"
+    });
+    if (!res) {
+      return Object.assign({}, Code.Find.ERROE);
+    }
+    if (res) {
+      return Object.assign({}, Code.Find.SUCCESS, {
+        data: res,
+      });
+    }
+  }
 }
 
 module.exports = ScoreService;
