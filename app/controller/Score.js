@@ -53,7 +53,7 @@ class ScoreController extends Controller {
    */
   async findClassGrade(){
     const { ctx, service } = this;
-    ctx.body = await service.score.list(ctx.query.jurisdiction);
+    ctx.body = await service.score.findClassGrade(ctx.query.jurisdiction);
   }
 }
 

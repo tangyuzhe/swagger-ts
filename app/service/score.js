@@ -72,16 +72,16 @@ class ScoreService extends Service {
 
   /**
    * 查询某个班级的学生完成情况
-   * @param {*} jurisdiction 
+   * @param {*} Jurisdiction 
    */
-  async findClassGrade(jurisdiction){
+  async findClassGrade(Jurisdiction){
     const { ctx } = this;
     const res = await ctx.model.Score.findAll({
       attributes: ['phone','score','time'],
-      where: {
-        jurisdiction: jurisdiction,
+      where:{
+        jurisdiction:Jurisdiction
       },
-      'order':"phone DESC"
+      'order':[['phone','ASC']]
     });
     if (!res) {
       return Object.assign({}, Code.Find.ERROE);
